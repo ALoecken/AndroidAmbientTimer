@@ -15,6 +15,9 @@
 */
 package com.example.android.basicimmersivemode;
 
+import android.annotation.TargetApi;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.MenuItem;
@@ -48,16 +51,42 @@ public class BasicImmersiveModeFragment extends Fragment {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.sample_action) {
-            toggleHideyBar();
+        if (item.getItemId() == R.id.action_start30m ||
+                item.getItemId() == R.id.action_start10m||
+                item.getItemId() == R.id.action_start5m||
+                item.getItemId() == R.id.action_start10s) {
+            toggleImmersiveMode(false);
+        } else if (                item.getItemId() == R.id.action_stop) {
+            toggleImmersiveMode(true);
         }
+
+        if (item.getItemId() == R.id.action_start30m){
+            startColorChange(30*60);
+        } else
+        if (item.getItemId() == R.id.action_start10m){
+            startColorChange(10*60);
+        }else
+        if (item.getItemId() == R.id.action_start5m){
+            startColorChange(5*60);
+        }else
+        if (item.getItemId() == R.id.action_start10s){
+            startColorChange(10);
+        }else
+        if (item.getItemId() == R.id.action_stop){
+            startColorChange(0.1f);
+        }
+
         return true;
+    }
+
+    private void startColorChange(float seconds){
+        ColorStatus.getInstance().startChange(Color.GREEN, Color.RED, seconds);
     }
 
     /**
      * Detects and toggles immersive mode.
      */
-    public void toggleHideyBar() {
+    public void toggleImmersiveMode(boolean on) {
         // BEGIN_INCLUDE (get_current_ui_flags)
         // The UI options currently enabled are represented by a bitfield.
         // getSystemUiVisibility() gives us that bitfield.
@@ -68,9 +97,11 @@ public class BasicImmersiveModeFragment extends Fragment {
         boolean isImmersiveModeEnabled =
                 ((uiOptions | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY) == uiOptions);
         if (isImmersiveModeEnabled) {
-            Log.i(TAG, "Turning immersive mode mode off. ");
+            if (on) return;
+            else Log.i(TAG, "Turning immersive mode mode off.");
         } else {
-            Log.i(TAG, "Turning immersive mode mode on.");
+            if (!on) return;
+            else Log.i(TAG, "Turning immersive mode mode on.");
         }
 
         // Immersive mode: Backward compatible to KitKat (API 19).
@@ -85,4 +116,5 @@ public class BasicImmersiveModeFragment extends Fragment {
         getActivity().getWindow().getDecorView().setSystemUiVisibility(newUiOptions);
         //END_INCLUDE (set_ui_flags)
     }
+
 }

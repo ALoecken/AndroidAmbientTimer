@@ -16,5 +16,9 @@
 -->
 
 <resources>
-        <string name="sample_action">Toggle Immersive Mode!</string>
+        <string name="start30m">Start 30 Min.</string>
+        <string name="start10m">Start 10 Min.</string>
+        <string name="start5m">Start 5 Min.</string>
+        <string name="start10s">Start 10 Sec.</string>
+        <string name="stop">Stop</string>
 </resources>

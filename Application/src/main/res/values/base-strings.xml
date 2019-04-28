@@ -16,16 +16,8 @@
 -->
 
 <resources>
-    <string name="app_name">BasicImmersiveMode</string>
+    <string name="app_name">AndroidAmbientTimer</string>
     <string name="intro_message">
-        <![CDATA[
-        
-            
-            \"Immersive Mode\" is a new UI mode which improves \"hide full screen\" and
-            \"hide nav bar\" modes, by letting users swipe the bars in and out.  This sample
-            demonstrates how to enable and disable immersive mode programmatically.
-            
-        
-        ]]>
+       Hello World!
     </string>
 </resources>

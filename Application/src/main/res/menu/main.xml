@@ -16,7 +16,24 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/sample_action"
-          app:showAsAction="ifRoom|withText"
-          android:title="@string/sample_action" />
+    <item
+        android:id="@+id/action_start30m"
+        android:title="@string/start30m"
+        app:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/action_start10m"
+        android:title="@string/start10m"
+        app:showAsAction="ifRoom|withText" />
+    <item
+    android:id="@+id/action_start5m"
+    android:title="@string/start5m"
+    app:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/action_start10s"
+        android:title="@string/start10s"
+        app:showAsAction="ifRoom|withText" />
+    <item
+        android:id="@+id/action_stop"
+        android:title="@string/stop"
+        app:showAsAction="ifRoom|withText" />
 </menu>
