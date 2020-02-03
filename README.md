@@ -10,6 +10,4 @@ Basis: https://github.com/googlearchive/android-BasicImmersiveMode
 
 Images
 ===================================
-<img src="screenshots/Screenshot1.jpg" height="400" alt="Screenshot 1"/> 
-<img src="screenshots/Screenshot2.jpg" height="400" alt="Screenshot 2"/> 
-<img src="screenshots/IMG_20200203_133213.jpg" height="400" alt="Example"/> 
+<img src="screenshots/Screenshot1.jpg" height="400" alt="Screenshot 1"/> <img src="screenshots/Screenshot2.jpg" height="400" alt="Screenshot 2"/> <img src="screenshots/IMG_20200203_133213.jpg" height="400" alt="Example"/> 
